@@ -10,8 +10,9 @@
 
 @implementation CTMediator (Module_A)
 
-- (UIViewController *)Module_AViewController {
-    return [self performTarget:@"Module_A" action:@"viewController" params:nil shouldCacheTarget:NO];
+- (UIViewController *)Module_AViewControllerWithCallBack:(void (^)(NSString *))callBack {
+    NSDictionary *params = [NSDictionary dictionaryWithObject:callBack forKey:@"callBack"];
+    return [self performTarget:@"Module_A" action:@"viewController" params:params shouldCacheTarget:NO];
 }
 
 @end

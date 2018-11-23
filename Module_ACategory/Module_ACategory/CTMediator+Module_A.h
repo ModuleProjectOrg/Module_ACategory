@@ -10,6 +10,6 @@
 
 @interface CTMediator (Module_A)
 
-- (UIViewController *)Module_AViewController;
+- (UIViewController *)Module_AViewControllerWithCallBack:(void (^)(NSString *result))callBack;
 
 @end
